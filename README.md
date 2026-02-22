@@ -52,7 +52,7 @@ Backend desarrollado con NestJS que permite gestionar una base de datos de héro
 
 1. Clona el repositorio:
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/DsiKorp/heroes-app-backend.git
 cd sec14-Backend-nest-heroes
 ```
 
