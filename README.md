@@ -1,98 +1,347 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🦸‍♂️ Heroes Backend - NestJS API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+API RESTful desarrollada con NestJS para la gestión de héroes y villanos. Este backend proporciona un sistema completo de CRUD con características avanzadas de búsqueda, paginación y estadísticas.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 📋 Descripción
 
-## Description
+Backend desarrollado con NestJS que permite gestionar una base de datos de héroes y villanos con sus características, poderes, estadísticas y más. Ideal para aplicaciones de catálogo de superhéroes, sistemas de gestión de personajes o cualquier proyecto relacionado con el universo de cómics.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## ✨ Características
 
-## Project setup
+- ✅ CRUD completo de héroes (Crear, Leer, Actualizar, Eliminar)
+- 🔍 Búsqueda avanzada por múltiples criterios
+- 📄 Paginación de resultados
+- 📊 Dashboard con estadísticas y resúmenes
+- 🎯 Filtrado por categorías (Héroes/Villanos)
+- 🌐 CORS habilitado
+- ✔️ Validación de datos con class-validator
+- 🚀 Transformación automática de DTOs
+- 📁 Servicio de archivos estáticos
 
-```bash
-$ npm install
+## 🛠️ Tecnologías
+
+- **Framework:** NestJS 11.0.1
+- **Runtime:** Node.js
+- **Lenguaje:** TypeScript 5.7.3
+- **Validación:** class-validator 0.14.2 & class-transformer 0.5.1
+- **Testing:** Jest 29.7.0
+- **Linting:** ESLint 9.18.0
+- **Formateo:** Prettier 3.4.2
+
+### Dependencias principales
+
+```json
+{
+  "@nestjs/common": "^11.0.1",
+  "@nestjs/core": "^11.0.1",
+  "@nestjs/platform-express": "^11.0.1",
+  "@nestjs/serve-static": "^5.0.3",
+  "@nestjs/mapped-types": "*",
+  "class-transformer": "^0.5.1",
+  "class-validator": "^0.14.2",
+  "uuid": "^11.1.0"
+}
 ```
 
-## Compile and run the project
+## 📋 Prerequisitos
 
+- Node.js 18 o superior
+- npm o yarn
+
+## 🚀 Instalación
+
+1. Clona el repositorio:
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone <url-del-repositorio>
+cd sec14-Backend-nest-heroes
 ```
 
-## Run tests
-
+2. Instala las dependencias:
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+3. (Opcional) Crea un archivo `.env` en la raíz del proyecto:
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# .env
+PORT=3000
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## 🔧 Variables de Entorno
 
-## Resources
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
 
-Check out a few resources that may come in handy when working with NestJS:
+```env
+# Puerto del servidor
+PORT=3000
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+# Otras configuraciones según necesites
+# NODE_ENV=development
+```
 
-## Support
+> **Nota:** Si no se especifica el puerto, la aplicación usará el puerto 3000 por defecto.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## 📦 Scripts Disponibles
 
-## Stay in touch
+```bash
+# Desarrollo
+npm run start:dev          # Inicia el servidor en modo desarrollo con hot-reload
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# Producción
+npm run build              # Compila el proyecto
+npm run start:prod         # Inicia el servidor en modo producción
 
-## License
+# Testing
+npm run test               # Ejecuta los tests unitarios
+npm run test:watch         # Tests en modo observación
+npm run test:cov           # Tests con cobertura
+npm run test:e2e           # Tests end-to-end
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+# Linting y formato
+npm run lint               # Ejecuta ESLint
+npm run format             # Formatea el código con Prettier
+```
+
+## 🌐 Ejecutar la aplicación
+
+### Modo desarrollo
+```bash
+npm run start:dev
+```
+
+El servidor estará disponible en `http://localhost:3000`
+
+### Modo producción
+```bash
+npm run build
+npm run start:prod
+```
+
+## 📚 API Endpoints
+
+Base URL: `http://localhost:3000/api`
+
+### Heroes
+
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/api/heroes` | Obtiene todos los héroes (con paginación) |
+| GET | `/api/heroes/:id` | Obtiene un héroe por ID o slug |
+| GET | `/api/heroes/search` | Búsqueda avanzada de héroes |
+| GET | `/api/heroes/summary` | Obtiene estadísticas y resumen |
+| POST | `/api/heroes` | Crea un nuevo héroe |
+| PATCH | `/api/heroes/:id` | Actualiza un héroe existente |
+| DELETE | `/api/heroes/:id` | Elimina un héroe |
+
+### Ejemplos de uso
+
+#### Obtener todos los héroes (paginado)
+```bash
+GET /api/heroes?limit=10&offset=0&category=all
+```
+
+**Query Parameters:**
+- `limit`: Número de resultados por página (default: 6)
+- `offset`: Número de registros a omitir (default: 0)
+- `category`: Filtrar por categoría - "Hero", "Villain", "all" (default: all)
+
+**Respuesta:**
+```json
+{
+  "total": 50,
+  "pages": 5,
+  "heroes": [...]
+}
+```
+
+#### Obtener un héroe específico
+```bash
+GET /api/heroes/1
+GET /api/heroes/spider-man
+```
+
+#### Crear un héroe
+```bash
+POST /api/heroes
+Content-Type: application/json
+
+{
+  "name": "Spider-Man",
+  "slug": "spider-man",
+  "alias": "Peter Parker",
+  "powers": ["Super fuerza", "Sentido arácnido", "Trepar paredes"],
+  "description": "Un estudiante mordido por una araña radioactiva",
+  "strength": 85,
+  "intelligence": 90,
+  "speed": 75,
+  "durability": 80,
+  "team": "Los Vengadores",
+  "image": "/images/spider-man.jpg",
+  "firstAppearance": "1962",
+  "status": "Activo",
+  "category": "Hero",
+  "universe": "Marvel"
+}
+```
+
+#### Búsqueda avanzada
+```bash
+GET /api/heroes/search?name=spider&category=Hero&minStrength=70
+```
+
+**Query Parameters disponibles:**
+- `name`: Buscar por nombre
+- `category`: Filtrar por categoría
+- `universe`: Filtrar por universo
+- `minStrength`: Fuerza mínima
+- `minIntelligence`: Inteligencia mínima
+- `team`: Filtrar por equipo
+
+#### Obtener resumen y estadísticas
+```bash
+GET /api/heroes/summary
+```
+
+**Respuesta:**
+```json
+{
+  "totalHeroes": 50,
+  "strongestHero": {...},
+  "smartestHero": {...},
+  "heroCount": 30,
+  "villainCount": 20,
+  "antiHeroCount": 0,
+  "avgStrength": 75.5,
+  "avgIntelligence": 80.2,
+  "avgSpeed": 70.8,
+  "avgDurability": 78.3,
+  "topTeams": [...]
+}
+```
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── app.module.ts                 # Módulo principal de la aplicación
+├── main.ts                       # Punto de entrada de la aplicación
+├── common/                       # Elementos compartidos
+│   └── dto/
+│       └── pagination.dto.ts     # DTO para paginación
+├── data/
+│   └── heroes.data.ts            # Datos iniciales de héroes
+└── heroes/                       # Módulo de héroes
+    ├── heroes.controller.ts      # Controlador REST
+    ├── heroes.service.ts         # Lógica de negocio
+    ├── heroes.module.ts          # Módulo de héroes
+    ├── dto/
+    │   ├── create-hero.dto.ts    # DTO para crear héroe
+    │   ├── update-hero.dto.ts    # DTO para actualizar héroe
+    │   └── advande-search.dto.ts # DTO para búsqueda avanzada
+    └── entities/
+        └── hero.entity.ts        # Entidad de héroe
+```
+
+## 🗂️ Modelo de Datos
+
+### Hero Entity
+
+```typescript
+{
+  id: string;                    // ID único
+  name: string;                  // Nombre del héroe
+  slug: string;                  // URL-friendly name
+  alias: string;                 // Identidad secreta
+  powers: string[];              // Lista de poderes
+  description: string;           // Descripción
+  strength: number;              // Fuerza (0-100)
+  intelligence: number;          // Inteligencia (0-100)
+  speed: number;                 // Velocidad (0-100)
+  durability: number;            // Durabilidad (0-100)
+  team: string;                  // Equipo
+  image: string;                 // URL de imagen
+  firstAppearance: string;       // Año de primera aparición
+  status: string;                // Estado (Activo/Retirado/etc)
+  category: string;              // Categoría (Hero/Villain)
+  universe: string;              // Universo (Marvel/DC/etc)
+}
+```
+
+## 🔒 Validaciones
+
+El proyecto utiliza `class-validator` para validar todos los datos de entrada:
+
+- ✅ Campos requeridos validados
+- ✅ Tipos de datos verificados
+- ✅ Números mínimos validados
+- ✅ Arrays con elementos tipados
+- ✅ Whitelist activo (rechaza propiedades no definidas)
+- ✅ Transformación automática de tipos
+
+## 🌍 CORS
+
+CORS está habilitado globalmente, permitiendo peticiones desde cualquier origen. Para configurar dominios específicos, modifica el archivo `main.ts`.
+
+## 📄 Archivos de Configuración
+
+### package.json
+Contiene todas las dependencias, scripts y configuración del proyecto.
+
+### tsconfig.json
+Configuración de TypeScript con opciones optimizadas para NestJS.
+
+### nest-cli.json
+Configuración del CLI de NestJS.
+
+### eslint.config.mjs
+Reglas de linting para mantener código limpio y consistente.
+
+## 🧪 Testing
+
+El proyecto está configurado con Jest para testing:
+
+```bash
+# Tests unitarios
+npm run test
+
+# Tests con cobertura
+npm run test:cov
+
+# Tests en modo watch
+npm run test:watch
+```
+
+## 🚀 Deploy
+
+Para desplegar en producción:
+
+1. Compila el proyecto:
+```bash
+npm run build
+```
+
+2. Los archivos compilados estarán en la carpeta `dist/`
+
+3. Ejecuta en producción:
+```bash
+npm run start:prod
+```
+
+## 📝 Notas
+
+- Este proyecto utiliza datos en memoria (sin base de datos persistente)
+- Los cambios se pierden al reiniciar el servidor
+- Ideal para desarrollo y testing
+- Para producción, considera integrar una base de datos (MongoDB, PostgreSQL, etc.)
+
+## 👨‍💻 Desarrollo
+
+Este proyecto fue creado como parte del curso "React De cero a experto" - Sección 14: Backend con NestJS.
+
+## 📄 Licencia
+
+UNLICENSED - Este proyecto es privado y no tiene licencia pública.
+
+---
+
+Desarrollado con ❤️ usando [NestJS](https://nestjs.com/)
